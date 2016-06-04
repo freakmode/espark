@@ -2,18 +2,24 @@ $default-bg: white;
 $default-text: black;
 
 body {
-	font-family: Georgia, serif;
+	font-family: arial, helvetica;
 	font-size: 16px;
 	background: $default-bg;
 	color: $default-text;
 }
 
-h1 {
-	font-size: 2em;
-	margin: 0.5em 0 1em;
+.md-icon-button {
+	i {
+		font-size: 48px;
+	}
+}
 
-	& > small {
-		color: gray;
-		font-size: 70%;
+.md-subhead {
+	i {
+		margin-right: 20px;
+
+		&:hover {
+			cursor: pointer;
+		}
 	}
 }

@@ -13,7 +13,25 @@
 			url: '/',
 			templateUrl: 'app/home/home.html',
 			controller: 'HomeCtrl',
-			controllerAs: 'homeCtrl'
+			controllerAs: 'homeCtrl',
+			resolve: {
+				students: getStudents,
+				domains: getDomains
+			}
 		});
+	}
+
+	function getStudents(studentService, parserService) {
+		return studentService.get()
+			.then(function(response) {
+				return parserService.parseHeader(response.data);
+			})
+	}
+
+	function getDomains(domainService, parserService) {
+		return domainService.get()
+			.then(function(response) {
+				return parserService.parseRow(response.data);
+			});
 	}
 }());
