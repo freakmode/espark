@@ -16,7 +16,7 @@
 		function get() {
 			var request = {
 				method: 'GET',
-				url: '../data/student_tests.csv'
+				url: '../data/csv/student_tests.csv'
 			};
 
 			return $http(request);

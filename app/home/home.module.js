@@ -15,8 +15,9 @@
 			controller: 'HomeCtrl',
 			controllerAs: 'homeCtrl',
 			resolve: {
-				students: getStudents,
-				domains: getDomains
+				config: getConfig,
+				domains: getDomains,
+				students: getStudents
 			}
 		});
 	}
@@ -25,13 +26,20 @@
 		return studentService.get()
 			.then(function(response) {
 				return parserService.parseHeader(response.data);
-			})
+			});
 	}
 
 	function getDomains(domainService, parserService) {
 		return domainService.get()
 			.then(function(response) {
 				return parserService.parseRow(response.data);
+			});
+	}
+
+	function getConfig(configService) {
+		return configService.get()
+			.then(function(response) {
+				return response.data;
 			});
 	}
 }());

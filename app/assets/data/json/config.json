@@ -1,0 +1,20 @@
+{
+	"learningPathIcons": [
+		{
+			"name": "spellcheck",
+			"tooltip": "Reading Foundation"
+		},
+		{
+			"name": "bookmark_border",
+			"tooltip": "Reading Literature"
+		},
+		{
+			"name": "bookmark",
+			"tooltip": "Reading Information"
+		},
+		{
+			"name": "question_answer",
+			"tooltip": "Language"
+		}
+	]
+}

@@ -4,8 +4,12 @@ $default-text: black;
 body {
 	font-family: arial, helvetica;
 	font-size: 16px;
-	background: $default-bg;
+	background-color: $default-bg;
 	color: $default-text;
+}
+
+i {
+	cursor: default;
 }
 
 .md-icon-button {
@@ -17,9 +21,17 @@ body {
 .md-subhead {
 	i {
 		margin-right: 20px;
-
-		&:hover {
-			cursor: pointer;
-		}
+		font-size: 18px;
+		color: green;
 	}
+}
+
+.assignment-icon {
+	color: green;
+	font-size: 96px !important;
+}
+
+.path-icon {
+	color: gray;
+	font-size: 18px;
 }

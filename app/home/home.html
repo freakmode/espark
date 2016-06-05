@@ -11,30 +11,33 @@
     </md-menu-content>
 </md-menu>
 <md-content layout="row" layout-align="center center" ng-if="homeCtrl.activeStudent">
-	<div layout="column" flex-xs flex-gt-xs="50">
+	<div layout="column">
 		<md-card>
 			<md-card-title layout="row" class="md-padding">
-				<md-card-title-text layout="column">
+				<md-card-title-media layout="column" layout-align="center center">
+	            	<i class="material-icons assignment-icon">assignment_turned_in</i>
+	          	</md-card-title-media>
+				<md-card-title-text layout="column" layout-align="center">
 					<span class="md-headline">
 						{{ homeCtrl.activeStudent.Student_Name }}
 					</span>
 					<span class="md-subhead">
-						<span>
-							<i class="material-icons" ng-if="key != 'Student_Name'" ng-repeat="(key, value) in homeCtrl.activeStudent">
-								{{ homeCtrl.getIcon(value) }}
-								<md-tooltip>
-									{{ key }}
-								</md-tooltip>
-							</i>
-						</span>
+						<i class="material-icons" ng-if="key != 'Student_Name'" ng-repeat="(key, value) in homeCtrl.activeStudent">
+							{{ homeCtrl.getIcon(value) }}
+							<md-tooltip>
+								{{ key }}
+							</md-tooltip>
+						</i>
 					</span>
 				</md-card-title-text>
-				<md-card-title-media layout="column" layout-align="center center">
-	            	<i class="material-icons" md-menu-origin="">child_care</i>
-	          	</md-card-title-media>
 			</md-card-title>
-			<md-content layout="row">
-				<span>LEARNING PATH</span>
+			<md-content class="md-padding" layout="row" ng-repeat="(key, value) in homeCtrl.domains">
+				<div flex="33">
+					{{ key }}
+				</div>
+				<div flex="15" ng-repeat="path in value">
+					{{ path }}
+				</div>
 			</md-content>
 		</md-card>
 	</div>

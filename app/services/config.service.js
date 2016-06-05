@@ -2,11 +2,11 @@
 	'use strict';
 
 	angular.module('app.services')
-		.factory('domainService', domainService);
+		.factory('configService', configService);
 
-	domainService.$inject = ['$http'];
+	configService.$inject = ['$http'];
 
-	function domainService($http) {
+	function configService($http) {
 		var service = {
 			get: get
 		};
@@ -16,7 +16,7 @@
 		function get() {
 			var request = {
 				method: 'GET',
-				url: '../data/csv/domain_order.csv'
+				url: '../data/json/config.json'
 			};
 
 			return $http(request);
