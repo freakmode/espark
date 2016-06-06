@@ -29,19 +29,21 @@
 						</span>
 					</span>
 				</md-card-title-text>
-				<md-card-title-media layout="center">
+				<md-card-title-media layout="center top">
 	            	<md-icon md-svg-icon="{{ homeCtrl.avatar }}" class="student-avatar"></md-icon>
 	          	</md-card-title-media>
 			</md-card-title>
-			<md-content class="md-padding learning-path-container" layout="row" ng-repeat="(key, value) in homeCtrl.domains">
-				<div flex="20">
-					<i class="material-icons" >
-						{{ homeCtrl.getIcon(key) }}
-					</i>
-				</div>
-				<div flex="20" ng-repeat="path in value">
-					{{ path }}
-				</div>
+			<md-content class="learning-path-content">
+				<div class="learning-path-container" layout="row" ng-repeat="(key, value) in homeCtrl.domains">
+					<div flex="20">
+						<i class="material-icons" >
+							{{ homeCtrl.getIcon(key) }}
+						</i>
+					</div>
+					<div flex="20" ng-repeat="path in value">
+						{{ path }}
+					</div>
+					</div>
 			</md-content>
 		</md-card>
 	</div>

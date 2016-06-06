@@ -45,9 +45,8 @@
 				if(key !== 'Student_Name') {
 					grade = vm.activeStudent[key];
 
-					while(grade >= 0) {
+					while(grade >= 1) {
 						grade--;
-						grade = (grade === 0) ? 'K' : grade;
 						domain = vm.domains[grade];
 						domainIndex = domain.indexOf(key);
 

@@ -21,7 +21,6 @@
 		$mdIconProvider) {
 		$urlRouterProvider.otherwise('/');
 
-		// $mdThemingProvider.theme('default');
 		$mdIconProvider.iconSet('avatars', '../svg/avatars.svg', 128);
 	}
 }());

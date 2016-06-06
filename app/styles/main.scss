@@ -24,7 +24,11 @@ i {
 	}
 }
 
-.learning-path-container {
+.learning-path-content {
+	.learning-path-container {
+		padding: 10px;
+	}
+
 	i {
 		margin-right: 20px;
 		font-size: 18px;

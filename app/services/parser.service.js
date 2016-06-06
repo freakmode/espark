@@ -46,6 +46,11 @@
 			for(var i = 0; i < totalLines; i++) {
 				parts = lines[i].split(',');
 				data[parts[0]] = parts.splice(1, parts.length);
+
+				if(parts[0] === 'K') {
+					data['0'] = data['K'];
+					delete data['K'];
+				}
 			}
 
 			return data;
