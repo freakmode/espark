@@ -4,10 +4,10 @@
 	angular.module('app.home')
 		.controller('HomeCtrl', HomeCtrl);
 
-	function HomeCtrl(config, domains, students) {
+	function HomeCtrl(domains, students) {
 		var vm = this;
 
-		vm.config = config;
+		vm.avatar;
 		vm.domains;
 		vm.students = students;
 
@@ -18,11 +18,20 @@
 
 		function selectStudent(student) {
 			vm.activeStudent = student;
+			generateAvatar();
 			generateLearningPath();
 		}
 
 		function getIcon(value) {
 			return (!isNaN(parseInt(value, 10))) ? 'filter_' + value : 'filter_none';
+		}
+
+		function generateAvatar() {
+			var max = 16;
+			var min = 1;
+			var avatar = (Math.floor(Math.random() * (max - min + 1)) + min);
+
+			vm.avatar = 'avatars:svg-' + avatar;
 		}
 
 		function generateLearningPath() {

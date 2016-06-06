@@ -15,7 +15,6 @@
 			controller: 'HomeCtrl',
 			controllerAs: 'homeCtrl',
 			resolve: {
-				config: getConfig,
 				domains: getDomains,
 				students: getStudents
 			}
@@ -33,13 +32,6 @@
 		return domainService.get()
 			.then(function(response) {
 				return parserService.parseRow(response.data);
-			});
-	}
-
-	function getConfig(configService) {
-		return configService.get()
-			.then(function(response) {
-				return response.data;
 			});
 	}
 }());
